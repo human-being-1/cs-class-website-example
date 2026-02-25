@@ -12,8 +12,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from board.views import *
+from .views import *
 
 urlpatterns = [
-    path('', IndexView.as_view(), name='index')
+    path('', SubforumsView.as_view(), name='index')
 ]

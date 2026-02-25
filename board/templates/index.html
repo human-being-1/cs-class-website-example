@@ -3,5 +3,13 @@
 {% block title %}message board{% endblock %}
 
 {% block content %}
-<h1>Test</h1>
+    <h1>Forums</h1>
+
+    {% for subforum in object_list %}
+        <div class="card">
+            <h2>{{ subforum.forum_name }}</h2>
+            <p>{{ subforum.description }}</p>
+        </div>
+    {% endfor %}
+
 {% endblock %}

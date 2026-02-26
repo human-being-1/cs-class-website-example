@@ -15,5 +15,6 @@ from django.urls import path, include
 from .views import *
 
 urlpatterns = [
-    path('', SubforumsView.as_view(), name='index')
+    path('', AllSubforumsView.as_view(), name='all_subforums'),
+    path('<int:pk>/', SubforumView.as_view(), name='subforum'),
 ]

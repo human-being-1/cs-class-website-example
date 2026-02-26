@@ -8,8 +8,10 @@ class Subforum(models.Model):
 
 class Post(models.Model):
     subforum = models.ForeignKey(Subforum, on_delete=models.CASCADE, null=True)
+    title = models.CharField(default="")
     author_name = models.CharField()
     content = models.CharField(max_length=8192)
 
-class Comment(models.Model):
+class Reply(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    content = models.CharField(max_length=8192)

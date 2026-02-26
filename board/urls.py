@@ -16,5 +16,6 @@ from .views import *
 
 urlpatterns = [
     path('', AllSubforumsView.as_view(), name='all_subforums'),
-    path('<int:pk>/', SubforumView.as_view(), name='subforum'),
+    path('<slug:slug>/create-post/', CreatePostView.as_view(), name='create_post'),
+    path('<slug:slug>/', SubforumView.as_view(), name='subforum'),
 ]

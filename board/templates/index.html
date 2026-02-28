@@ -3,12 +3,13 @@
 {% block title %}message board{% endblock %}
 
 {% block content %}
-    <h1>Forums</h1>
+    <h1>Posts</h1>
+    <p><strong><a href="{% url 'create_post' %}">create post...</a></strong></p>
 
-    {% for subforum in subforum_list %}
+    {% for post in post_list.reverse %}
         <div class="card">
-            <h2><a href="">{{ subforum.forum_name }}</a></h2>
-            <p>{{ subforum.description }}</p>
+            <h2><a href="{% url 'post' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p><small>posted by <strong>{{ post.author_name }}</strong></small></p>
         </div>
     {% endfor %}
 

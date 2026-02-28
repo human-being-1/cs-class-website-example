@@ -15,7 +15,8 @@ from django.urls import path, include
 from .views import *
 
 urlpatterns = [
-    path('', AllSubforumsView.as_view(), name='all_subforums'),
-    path('<slug:slug>/create-post/', CreatePostView.as_view(), name='create_post'),
-    path('<slug:slug>/', SubforumView.as_view(), name='subforum'),
+    path('', AllPostsView.as_view(), name='all_posts'),
+    path('create-post/', CreatePostView.as_view(), name='create_post'),
+    path('<int:pk>/', PostView.as_view(), name='post'),
+    path('<int:pk>/reply', CreateReplyView.as_view(), name='create_reply'),
 ]
